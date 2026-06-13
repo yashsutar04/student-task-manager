@@ -1,0 +1,61 @@
+{% extends 'layout.html' %}
+
+{% block content %}
+
+<h2>Attendance Report</h2>
+
+<table
+    id="attendance_table"
+    class="table table-bordered table-striped mt-4"
+>
+
+    <thead class="table-dark">
+
+        <tr>
+
+            <th>Student Name</th>
+            <th>Date</th>
+            <th>Status</th>
+
+        </tr>
+
+    </thead>
+
+    <tbody>
+
+        {% for record in attendance_records %}
+
+        <tr>
+
+            <td>
+                {{ record.first_name }}
+                {{ record.last_name }}
+            </td>
+
+            <td>{{ record.attendance_date }}</td>
+
+            <td>{{ record.attendance_status }}</td>
+
+        </tr>
+
+        {% endfor %}
+
+    </tbody>
+
+</table>
+
+{% endblock %}
+
+{% block scripts %}
+
+<script>
+
+    $(document).ready(function () {
+
+        $('#attendance_table').DataTable();
+
+    });
+
+</script>
+
+{% endblock %}

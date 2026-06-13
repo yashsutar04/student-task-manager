@@ -1,0 +1,53 @@
+<form action="/update_student/{{ student.student_id }}" method="POST">
+    
+    <input
+        type="text"
+        name="student_id"
+        value="{{ student.student_id }}"
+        class="form-control"
+    >
+
+    <input
+        type="text"
+        name="first_name"
+        value="{{ student.first_name }}"
+        class="form-control"
+    >
+
+    <input
+        type="text"
+        name="last_name"
+        value="{{ student.last_name }}"
+        class="form-control"
+    >
+
+    <input
+        type="text"
+        name="gender"
+        value="{{ student.gender }}"
+        class="form-control"
+    >
+
+    <input
+        type="text"
+        name="email"
+        value="{{ student.email }}"
+        class="form-control"
+    >
+
+    <input
+        type="text"
+        name="course"
+        value="{{ student.course }}"
+        class="form-control"
+    >
+
+
+    <button
+        type="submit"
+    >
+        Update Student
+    </button>
+
+
+</form>

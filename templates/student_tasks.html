@@ -1,0 +1,77 @@
+{% extends 'layout.html' %}
+
+{% block content %}
+
+<h2>Student Task Report</h2>
+
+<table
+    id="student_tasks_table"
+    class="table table-bordered table-striped mt-4"
+>
+
+    <thead class="table-dark">
+
+        <tr>
+
+            <th>ID</th>
+            <th>Student</th>
+            <th>Task</th>
+            <th>Status</th>
+            <th>Marks</th>
+            <th>Maximum Marks</th>
+            <th>Submission Date</th>
+            <th>Remarks</th>
+
+        </tr>
+
+    </thead>
+
+    <tbody>
+
+        {% for record in task_records %}
+
+        <tr>
+
+            <td>{{ record.student_task_id }}</td>
+
+            <td>
+                {{ record.first_name }}
+                {{ record.last_name }}
+            </td>
+
+            <td>{{ record.task_name }}</td>
+
+            <td>{{ record.submission_status }}</td>
+
+            <td>{{ record.obtained_marks }}</td>
+
+            <td>{{ record.maximum_marks }}</td>
+
+            <td>{{ record.submission_date }}</td>
+
+            <td>{{ record.remarks }}</td>
+
+        </tr>
+
+        {% endfor %}
+
+    </tbody>
+
+</table>
+
+{% endblock %}
+
+
+{% block scripts %}
+
+<script>
+
+    $(document).ready(function () {
+
+        $('#student_tasks_table').DataTable();
+
+    });
+
+</script>
+
+{% endblock %}
